@@ -9,11 +9,6 @@ jobs:
 
     steps:
 
-      - uses: actions/setup-python@v3
-        with:
-          python-version: '3.9'
-          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
-
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
