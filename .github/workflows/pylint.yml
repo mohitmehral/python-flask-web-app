@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
 
-    runs-on: mlops-ue2-ec2
+    runs-on: self-hosted
     strategy:
       matrix:
         python-version: ["3.11"]
