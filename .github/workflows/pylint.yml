@@ -8,7 +8,7 @@ jobs:
     runs-on: self-hosted
     strategy:
       matrix:
-        python-version: ["3.9.16"]
+        python-version: ["3.9"]
 
     steps:
       - uses: actions/checkout@v4
@@ -19,6 +19,9 @@ jobs:
       - name: Install dependencies
         run: |
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          export RUNNER_ALLOW_RUNASROOT=true
+          export AGENT_TOOLSDIRECTORY=/opt/hostedtoolcache
+          mkdir /opt/hostedtoolcache
       - name: Run web app
         run: |
           python main.py
