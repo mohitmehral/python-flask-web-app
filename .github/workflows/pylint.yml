@@ -13,14 +13,12 @@ jobs:
         with:
           python-version: '3.9'
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
-        env:
-          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+
       - name: Install dependencies
         run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          export RUNNER_ALLOW_RUNASROOT=true
-          export AGENT_TOOLSDIRECTORY=/opt/hostedtoolcache
+          pip install -r requirements.txt
+
           mkdir /opt/hostedtoolcache
       - name: Run web app
         run: |
-          python main.py
+          /usr/bin/python main.py
