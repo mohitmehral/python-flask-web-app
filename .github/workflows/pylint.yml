@@ -12,8 +12,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-
-          mkdir /opt/hostedtoolcache
       - name: Run web app
         run: |
           /usr/bin/python main.py
