@@ -14,4 +14,4 @@ jobs:
           pip install -r requirements.txt
       - name: Run web app
         run: |
-          /usr/bin/python main.py
+          python main.py
